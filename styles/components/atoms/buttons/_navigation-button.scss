@@ -1,7 +1,7 @@
 @use "../../../abstracts/tokens/tokens" as tokens;
 @use "../../../abstracts/mixins/mixins" as mixins;
 
-.navigation__button {
+%button {
   @include mixins.reset-button();
   @include mixins.flex(row, center, center);
   position: relative;
@@ -13,6 +13,10 @@
   img {
     border-radius: 100%; // I really don't like this solution
   }
+}
+
+.navigation__button {
+  @extend %button;
 }
 
 .navigation__button:hover:not([aria-expanded="true"]),

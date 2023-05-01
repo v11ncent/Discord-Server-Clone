@@ -1,9 +1,7 @@
 @use "../abstracts/tokens/tokens" as tokens;
 @use "../abstracts/mixins/mixins" as mixins;
 
-.servers {
+.members {
   @include mixins.remove-scrollbar();
-  grid-area: servers;
   max-height: inherit;
-  background-color: tokens.$clr-dark-grey;
 }

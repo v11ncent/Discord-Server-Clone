@@ -21,11 +21,7 @@ body {
   display: grid;
   grid-template-columns: auto auto 1fr auto;
   grid-template-areas: "servers channels messages members";
-}
-
-.servers {
-  grid-area: servers;
-  background-color: #1e1f22;
+  max-height: 100vh;
 }
 
 /*
@@ -36,6 +32,40 @@ body {
  * @param {Number} $gap [0] - Gap between items
  * @param {String} $wrap [wrap] - Whether to wrap items or not
  */
+.servers {
+  scrollbar-width: none;
+  overflow-y: auto;
+  grid-area: servers;
+  max-height: inherit;
+  background-color: #1e1f22;
+}
+.servers ::-webkit-scrollbar {
+  width: 0.5em;
+}
+.servers ::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+.servers ::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 1em;
+}
+
+.members {
+  scrollbar-width: none;
+  overflow-y: auto;
+  max-height: inherit;
+}
+.members ::-webkit-scrollbar {
+  width: 0.5em;
+}
+.members ::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+.members ::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 1em;
+}
+
 .servers__navigation {
   padding: 1rem;
 }

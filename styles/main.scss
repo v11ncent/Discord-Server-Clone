@@ -1,6 +1,7 @@
 @use "./base/base";
 @use "./layouts/app";
 @use "./layouts/servers";
+@use "./layouts/members";
 @use "./components/organisms/navigations/servers-navigation";
 @use "./components/organisms/navigations/navigation-section";
 @use "./components/molecules/lists/members-list";
