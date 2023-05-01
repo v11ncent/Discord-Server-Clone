@@ -1,0 +1,17 @@
+/*
+ * Standard, multi-use flex container.
+ * @param {String} $dir - Flex direction
+ * @param {String} $ai - Align items
+ * @param {String} $js - Justify content
+ * @param {Number} $gap [0] - Gap between items
+ * @param {String} $wrap [wrap] - Whether to wrap items or not
+ */
+
+@mixin flex($dir, $ai, $jc, $gap: 0, $wrap: wrap) {
+  display: flex;
+  flex-direction: $dir;
+  align-items: $ai;
+  justify-content: $jc;
+  gap: #{$gap}rem;
+  wrap: $wrap;
+}

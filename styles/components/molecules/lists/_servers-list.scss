@@ -1,0 +1,7 @@
+@use "../../../abstracts/tokens/tokens" as tokens;
+@use "../../../abstracts/mixins/mixins" as mixins;
+
+.servers__list {
+  @include mixins.reset-list();
+  @include mixins.flex(column, center, center, 0.75);
+}

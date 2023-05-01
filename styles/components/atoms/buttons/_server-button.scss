@@ -1,0 +1,45 @@
+@use "../../../abstracts/tokens/tokens" as tokens;
+@use "../../../abstracts/mixins/mixins" as mixins;
+
+.server__button {
+  @include mixins.reset-button();
+  @include mixins.flex(row, center, center);
+  width: tokens.$w-server-icon;
+  aspect-ratio: 1 / 1;
+  position: relative;
+
+  &,
+  img {
+    border-radius: 100%; // I really don't like this solution
+  }
+}
+
+.server__button:hover:not([aria-expanded="true"]),
+.server__button[aria-expanded="true"] {
+  transition: 0.2s all ease-in-out;
+
+  &,
+  img {
+    border-radius: 32.5%;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -29%;
+    transform: translate(-50%, -50%);
+    width: 1rem;
+    aspect-ratio: 1 / 1;
+    border-radius: 0.25rem;
+    background-color: tokens.$clr-white;
+  }
+}
+
+.server__button:hover::before {
+  height: 40%;
+}
+
+.server__button[aria-expanded="true"]::before {
+  height: 75%;
+}

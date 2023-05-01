@@ -1,0 +1,6 @@
+@use "../abstracts/tokens/tokens" as tokens;
+
+.servers {
+  grid-area: servers;
+  background-color: tokens.$clr-dark-grey;
+}
