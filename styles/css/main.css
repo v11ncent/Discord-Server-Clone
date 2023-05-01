@@ -37,7 +37,7 @@ body {
  * @param {String} $wrap [wrap] - Whether to wrap items or not
  */
 .servers__navigation {
-  padding: 0.25rem 1rem;
+  padding: 1rem;
 }
 
 .servers__list {
@@ -48,10 +48,10 @@ body {
   align-items: center;
   justify-content: center;
   gap: 0.75rem;
-  wrap: wrap;
+  flex-wrap: wrap;
 }
 
-.server__button {
+.navigation__button {
   border: transparent;
   background-color: transparent;
   cursor: pointer;
@@ -61,28 +61,29 @@ body {
   align-items: center;
   justify-content: center;
   gap: 0rem;
-  wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
   width: 4rem;
   aspect-ratio: 1/1;
-  position: relative;
+  background-color: #2b2d31;
 }
-.server__button,
-.server__button img {
+.navigation__button,
+.navigation__button img {
   border-radius: 100%;
 }
 
-.server__button:hover:not([aria-expanded=true]),
-.server__button[aria-expanded=true] {
-  transition: 0.2s all ease-in-out;
+.navigation__button:hover:not([aria-expanded=true]),
+.navigation__button[aria-expanded=true] {
+  background-color: #5865f2;
 }
-.server__button:hover:not([aria-expanded=true]),
-.server__button:hover:not([aria-expanded=true]) img,
-.server__button[aria-expanded=true],
-.server__button[aria-expanded=true] img {
+.navigation__button:hover:not([aria-expanded=true]),
+.navigation__button:hover:not([aria-expanded=true]) img,
+.navigation__button[aria-expanded=true],
+.navigation__button[aria-expanded=true] img {
   border-radius: 32.5%;
 }
-.server__button:hover:not([aria-expanded=true])::before,
-.server__button[aria-expanded=true]::before {
+.navigation__button:hover:not([aria-expanded=true])::before,
+.navigation__button[aria-expanded=true]::before {
   content: "";
   position: absolute;
   top: 50%;
@@ -90,22 +91,44 @@ body {
   transform: translate(-50%, -50%);
   width: 1rem;
   aspect-ratio: 1/1;
-  border-radius: 0.25rem;
+  border-radius: 0.325rem;
   background-color: #dbdee1;
+  transition: 0.2s all ease-in-out;
 }
 
-.server__button:hover::before {
+.navigation__button:hover::before {
   height: 40%;
 }
 
-.server__button[aria-expanded=true]::before {
+.navigation__button[aria-expanded=true]::before {
   height: 75%;
 }
 
-.server__icon {
+.button__icon {
   width: 100%;
   aspect-ratio: 1/1;
   pointer-events: none;
+}
+
+.button__icon-small {
+  max-width: 75%;
+  pointer-events: none;
+}
+
+.navigation__divider-bottom, .navigation__divider-top {
+  max-width: 2.5rem;
+  color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.2);
+  height: 1.75px;
+  border: 0;
+}
+
+.navigation__divider-top {
+  margin-top: 1rem;
+}
+
+.navigation__divider-bottom {
+  margin-bottom: 1rem;
 }
 
 /*# sourceMappingURL=main.css.map */

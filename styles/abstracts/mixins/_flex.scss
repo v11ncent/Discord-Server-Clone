@@ -13,5 +13,5 @@
   align-items: $ai;
   justify-content: $jc;
   gap: #{$gap}rem;
-  wrap: $wrap;
+  flex-wrap: $wrap;
 }

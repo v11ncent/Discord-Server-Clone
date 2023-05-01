@@ -1,7 +1,12 @@
 @use "../../../abstracts/tokens/tokens" as tokens;
 
-.server__icon {
+.button__icon {
   width: 100%;
   aspect-ratio: 1 / 1;
   pointer-events: none; // allows the button to be clicked
+}
+
+.button__icon-small {
+  max-width: 75%;
+  pointer-events: none;
 }

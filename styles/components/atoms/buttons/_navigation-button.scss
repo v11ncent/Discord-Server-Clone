@@ -1,12 +1,13 @@
 @use "../../../abstracts/tokens/tokens" as tokens;
 @use "../../../abstracts/mixins/mixins" as mixins;
 
-.server__button {
+.navigation__button {
   @include mixins.reset-button();
   @include mixins.flex(row, center, center);
+  position: relative;
   width: tokens.$w-server-icon;
   aspect-ratio: 1 / 1;
-  position: relative;
+  background-color: tokens.$clr-grey;
 
   &,
   img {
@@ -14,13 +15,13 @@
   }
 }
 
-.server__button:hover:not([aria-expanded="true"]),
-.server__button[aria-expanded="true"] {
-  transition: 0.2s all ease-in-out;
+.navigation__button:hover:not([aria-expanded="true"]),
+.navigation__button[aria-expanded="true"] {
+  background-color: tokens.$clr-brand;
 
   &,
   img {
-    border-radius: 32.5%;
+    border-radius: 32.5%; // selector explosion...
   }
 
   &::before {
@@ -31,15 +32,16 @@
     transform: translate(-50%, -50%);
     width: 1rem;
     aspect-ratio: 1 / 1;
-    border-radius: 0.25rem;
+    border-radius: 0.325rem;
     background-color: tokens.$clr-white;
+    transition: 0.2s all ease-in-out;
   }
 }
 
-.server__button:hover::before {
+.navigation__button:hover::before {
   height: 40%;
 }
 
-.server__button[aria-expanded="true"]::before {
+.navigation__button[aria-expanded="true"]::before {
   height: 75%;
 }

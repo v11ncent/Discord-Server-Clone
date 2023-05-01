@@ -1,8 +1,10 @@
 @use "./base/base";
 @use "./layouts/app";
 @use "./layouts/servers";
-@use "./components/organisms/navigations/servers__navigation";
+@use "./components/organisms/navigations/servers-navigation";
+@use "./components/organisms/navigations/navigation-section";
 @use "./components/molecules/lists/members-list";
 @use "./components/molecules/lists/servers-list";
-@use "./components/atoms/buttons/server-button";
-@use "./components/atoms/images/server-icon";
+@use "./components/atoms/buttons/navigation-button";
+@use "./components/atoms/images/button-icon";
+@use "./components/atoms/dividers/navigation-divider";
